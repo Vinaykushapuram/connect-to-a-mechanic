@@ -3,11 +3,24 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose=require('mongoose');
+var Mechanics=require('./models/mechanicschema');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
+var mechanicrouter = require('./routes/mechanicroute.js');
+
 
 var app = express();
+var url='mongodb://127.0.0.1:27017/mechanicsdb';
+
+
+//connecting to mongodb
+
+var connect=mongoose.connect(url);
+connect.then((db)=>
+{
+  console.log('connected to the server');
+},(err)=>{console.log(err);});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,8 +32,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/',mechanicrouter );
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -10,6 +10,8 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import Buttons from "./Buttons.jsx";
 import Location from "./Locationsearch.jsx";
 import Cards from "./Cards.jsx";
+import Footer from "./Footer";
+import Paper from '@material-ui/core/Paper';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -27,12 +29,36 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1
   }
+  ,
+  layout: {
+    width: '100%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    backgroundcolor:'red',
+    [theme.breakpoints.up(600 + theme.spacing(2) * 2)]: {
+      width: '100%',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    },
+  },
+  paper: { 
+    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(3),
+    padding: theme.spacing(2),
+    [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
+      marginTop: theme.spacing(6),
+      marginBottom: theme.spacing(6),
+      padding: theme.spacing(3),
+    }
+}
 }));
 
 export default function Frontpage() {
   const classes = useStyles();
 
   return (
+    
+ <main className={classes.layout}>
     <div className={classes.root}>
       <AppBar position="static">
         <Typography
@@ -52,11 +78,15 @@ export default function Frontpage() {
           CONNECT TO A MECHANIC
         </Typography>
       </AppBar>
+      
       <Buttons />
       <Location />
       <Cards />
-   
-     
+    
+     <Footer />
     </div>
+    </main>
+    
+    
   );
 }

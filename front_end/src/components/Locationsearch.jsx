@@ -4,12 +4,11 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
-//import TextField from '@material-ui/core/TextField';
-//import Grid from '@material-ui/core/Grid';
-//import AccountCircle from '@material-ui/icons/AccountCircle';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
+
+
 const useStyles = makeStyles((theme) => ({
   margin: {
     margin: theme.spacing(1),

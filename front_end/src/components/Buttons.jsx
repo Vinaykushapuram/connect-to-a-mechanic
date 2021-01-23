@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-
+import {Link} from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
@@ -16,10 +16,14 @@ export default function Buttons() {
   return (
     <div className={classes.root}>
    
+    <Link to="/addmechanic">
+     <Button variant="outlined" color="primary" href="#outlined-buttons">
      
-      <Button variant="outlined" color="primary" href="#outlined-buttons">
         Add a mechanic
+       
       </Button>
+     
+     </Link>
     </div>
   );
 }
