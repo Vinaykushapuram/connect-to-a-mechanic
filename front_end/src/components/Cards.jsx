@@ -1,12 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';import CardActions from '@material-ui/core/CardActions';
+import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-//import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import DriveEtaIcon from '@material-ui/icons/DriveEta';
-import Paper from '@material-ui/core/Paper';
-
 
 
 const useStyles = makeStyles((theme)=>({
@@ -40,12 +37,15 @@ const useStyles = makeStyles((theme)=>({
   
 }));
 
-export default function SimpleCard() {
-  const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
-
-  return (
-    <div >
+  
+  export default function SimpleCard (props) {
+    const classes = useStyles();
+  
+  
+return (
+<div>
+  
+    
     <paper className={classes.paper} >
     <Card className={classes.root} >
       <CardContent>
@@ -53,9 +53,14 @@ export default function SimpleCard() {
           
         </Typography>
         <Typography variant="h5" component="h2">
-          mech.name
+        {props.element.name}
         </Typography>
-        
+        <Typography variant="h5" component="h2">
+        {props.element.shopname}
+        </Typography>
+        <Typography variant="h5" component="h2">
+         shop location:{props.element.location}
+        </Typography>
         <Typography className={classes.pos} color="textSecondary">
        mech.rating 
         </Typography>
@@ -63,51 +68,28 @@ export default function SimpleCard() {
        contact_details:
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-        phone no_1:   99893011029931 
-        phone no_2:   12236371239903  
+        phone no1 :{props.element.phoneno1}
+
+       phone no2 : {props.element.phoneno2}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-        Adress: 
+       Full  Adress: {props.element.address}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
         
         </Typography>
        <DriveEtaIcon/>
+       
       </CardContent>
    
     </Card>
     </paper>
-    <Card className={classes.root} >
-      <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          
-        </Typography>
-        <Typography variant="h5" component="h2">
-          mech.name
-        </Typography>
-        
-        <Typography className={classes.pos} color="textSecondary">
-       mech.rating 
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-       contact_details:
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-        phone no_1:   99893011029931 
-        phone no_2:   12236371239903  
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-        Adress: 
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-        
-        </Typography>
-       <DriveEtaIcon/>
-
-      </CardContent>
-     
-    </Card>
-    </div>
     
+  
+    </div>
   );
-}
+
+
+ }
+
+

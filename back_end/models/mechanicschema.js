@@ -49,12 +49,13 @@ const mechanicschema=new Schema(
       type:Boolean,
       required:true
   },
-  vehicles:
+ 
+  bus :
   {
       type:Boolean,
       required:true
   },
-  bus :
+  vehicles:
   {
       type:Boolean,
       required:true

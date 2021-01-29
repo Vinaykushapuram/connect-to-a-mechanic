@@ -4,11 +4,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Paper from '@material-ui/core/Paper';
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
-import Button from '@material-ui/core/Button';
-import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import  Mechanicdetails from './mechanic_details_form.js';
 
@@ -71,14 +66,12 @@ export default function Checkout() {
       </AppBar>
       <main className={classes.layout}>
         <Paper className={classes.paper}>
-          <Typography component="h1" variant="h4" align="center">
+          <Typography component="h1" variant="h2" align="center">
             Add a Mechanic
            
           </Typography>
              <Mechanicdetails />
-             <Button variant="contained" color="primary" align="center" >
-  submit
-</Button>
+            
 
         </Paper>
         

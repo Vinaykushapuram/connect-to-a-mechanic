@@ -9,7 +9,7 @@ mechanicrouter.use(bodyparser.json());
 mechanicrouter.route('/')
 
 .get((req,res,next) =>
-{ const query={"location":"hyderabad"};
+{ 
     Mechanics.find({})
     .then(mechanics1=>
         {

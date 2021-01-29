@@ -5,17 +5,19 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose=require('mongoose');
 var Mechanics=require('./models/mechanicschema');
-
+var cors=require('cors');
 
 var mechanicrouter = require('./routes/mechanicroute.js');
 
 
-var app = express();
-var url='mongodb://127.0.0.1:27017/mechanicsdb';
 
+
+var app = express();
+//handling cors
+app.use(cors());
 
 //connecting to mongodb
-
+var url='mongodb://127.0.0.1:27017/mechanics1db';
 var connect=mongoose.connect(url);
 connect.then((db)=>
 {
@@ -50,5 +52,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;
