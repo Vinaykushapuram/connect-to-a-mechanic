@@ -9,8 +9,9 @@ mechanicrouter.use(bodyparser.json());
 mechanicrouter.route('/')
 
 .get((req,res,next) =>
-{ 
-    Mechanics.find({})
+{  
+   
+    Mechanics.find({name:"vinayreddy"})
     .then(mechanics1=>
         {
             res.statusCode=200;

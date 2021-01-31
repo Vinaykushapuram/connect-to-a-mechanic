@@ -9,7 +9,7 @@ var cors=require('cors');
 
 var mechanicrouter = require('./routes/mechanicroute.js');
 
-
+var mechanicbylocation=require('./routes/mechanicbylocation.js');
 
 
 var app = express();
@@ -34,8 +34,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/',mechanicrouter );
 
+
+app.use('/:mechanicId',mechanicbylocation);
+app.use('/',mechanicrouter );
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
