@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '50vh',
   },
   main: {
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(1),
     marginBottom: theme.spacing(2),
   },
   footer: {
@@ -28,12 +28,12 @@ export default function StickyFooter() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div >
       
       
       <footer className={classes.footer}>
         <Container maxWidth="sm">
-          <Typography variant="h6">we help in making your journey smooth.</Typography>
+          <Typography variant="h5">we help in making your journey smooth.</Typography>
           
         </Container>
       </footer>

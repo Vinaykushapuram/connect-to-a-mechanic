@@ -1,7 +1,7 @@
 
 import React from 'react';
-import Card from './Cards'
-
+import Card from './Cards';
+import Header from './Header';
 class MechanicByLocation extends React.Component
 {
     constructor(props)
@@ -31,6 +31,7 @@ class MechanicByLocation extends React.Component
     {
         return (
             <div>
+            <Header />
             {this.state.mechanics.map((mechanic)=>
                { return(
                     <div>

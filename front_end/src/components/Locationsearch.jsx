@@ -7,7 +7,7 @@ import FormControl from '@material-ui/core/FormControl';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
-import Mechanicbylocation from './MechanicByLocation';
+import MechanicByLocation from './MechanicByLocation';
 import { Link, Redirect } from 'react-router-dom';
 
 
@@ -42,9 +42,13 @@ classes = makeStyles((theme) => ({
 }));
 
 mechanic_by_location_connector()
-{   console.log(this.props);
-  
-  <Redirect to={"/"+this.state.location} />
+{   console.log('sent message to mechanicsbylocation');
+
+  return   (
+    <div>
+  <MechanicByLocation  url={this.state.url} location={this.state.location} />
+  </div>
+  );
 }
 
 render(){
@@ -65,10 +69,11 @@ render(){
         />
         
    
-      <Link  to={"/"+this.state.location} >
+    <Link   to={"/"+this.state.location }>
       <Button variant="outlined" color="primary"  onClick={ this.mechanic_by_location_connector  }>
       Search
-      </Button></Link>
+      </Button>
+      </Link>
       </FormControl>
       
      

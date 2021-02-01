@@ -13,15 +13,8 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding :"20px",
   },
-  menuButton: {
-    marginRight: theme.spacing(2)
-  },
-  toolbar: {
-    minHeight: 128,
-    alignItems: "flex-start",
-    paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(2)
-  },
+ 
+  
   title: {
     flexGrow: 1
   }
@@ -67,17 +60,18 @@ export default function Frontpage() {
           CONNECT TO A MECHANIC
          
         </Typography>
-       
+        
       </AppBar>
      
- 
+      <paper className={classes.paper}>
       <Location  />
       <Buttons />
       <Fetchdata />
-    
+      </paper>
      
     </div>
     </main>
+   
     
     
   );

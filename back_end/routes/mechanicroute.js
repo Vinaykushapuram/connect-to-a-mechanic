@@ -1,7 +1,7 @@
 const  express=require('express');
 const   bodyparser=require('body-parser');
 const  Mechanics=require('../models/mechanicschema.js');
-console.log('hi ra');
+
 const mechanicrouter=express.Router();
 
 mechanicrouter.use(bodyparser.json());

@@ -5,8 +5,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import DriveEtaIcon from '@material-ui/icons/DriveEta';
 import { blue } from '@material-ui/core/colors';
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 const useStyles = makeStyles((theme)=>({
   root: {
     maxWidth: "100%",
@@ -77,7 +77,7 @@ return (
         <Typography className={classes.pos} color="textSecondary">
         
         </Typography>
-        <i class="fas fa-motorcycle">f21c </i>
+        <FontAwesomeIcon icon={['fas','google']} />
        <DriveEtaIcon/>
        
       </CardContent>
