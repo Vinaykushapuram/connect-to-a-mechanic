@@ -16,10 +16,10 @@ class Foo extends React.Component{
     
   async  componentDidMount()
   {
-      const url='http://localhost:3000/';
+      const url='http://localhost:3000/mechanics';
       const items=await fetch(url);
       const data =await items.json();
-      console.log(data);
+      
       this.setState(
           {
               mechanics:data

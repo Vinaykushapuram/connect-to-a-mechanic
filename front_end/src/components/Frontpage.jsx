@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Buttons from "./Buttons.jsx";
 import Location from "./Locationsearch.jsx";
-import Footer from "./Footer";
+
 import Fetchdata from './fetch_mechanic';
 import Mechimage from './mechanicphoto.jpg';
 import { Height } from "@material-ui/icons";
@@ -71,11 +71,11 @@ export default function Frontpage() {
       </AppBar>
      
  
-      <Location />
+      <Location  />
       <Buttons />
       <Fetchdata />
     
-     <Footer />
+     
     </div>
     </main>
     

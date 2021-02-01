@@ -31,7 +31,7 @@ const mechanicschema=new Schema(
     },
   address : {
       type:String,
-      unique:true,
+    
       required:true
   },
   bike :

@@ -36,8 +36,8 @@ handleInputChange= (event) =>{
 handleSubmit= (event) =>{
 
     event.preventDefault();
-    axios.post('http://localhost:3000/',{
-        name:this.state.firstName,
+    axios.post('http://localhost:3000/mechanics',{
+        name:this.state.firstName+' '+this.state.lastName,
         shopname:this.state.shopname,
         phoneno1:this.state.phonenumber1,
         phoneno2:this.state.phonenumber2,

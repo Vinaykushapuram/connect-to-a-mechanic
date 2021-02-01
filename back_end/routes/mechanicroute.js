@@ -1,7 +1,7 @@
 const  express=require('express');
 const   bodyparser=require('body-parser');
 const  Mechanics=require('../models/mechanicschema.js');
-
+console.log('hi ra');
 const mechanicrouter=express.Router();
 
 mechanicrouter.use(bodyparser.json());
@@ -11,7 +11,7 @@ mechanicrouter.route('/')
 .get((req,res,next) =>
 {  
    
-    Mechanics.find({name:"vinayreddy"})
+    Mechanics.find({},null,{limit:5})
     .then(mechanics1=>
         {
             res.statusCode=200;
@@ -34,5 +34,7 @@ mechanicrouter.route('/')
 ,(err)=>next(err))
 .catch((err)=>next(err))
 });
+
+
 module.exports=mechanicrouter;
 
