@@ -1,4 +1,5 @@
-
+const dotenv=require('dotenv');
+dotenv.config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -18,24 +19,8 @@ var app = express();
 app.use(cors());
 
 //connecting to mongodb
- 
-
-
-const connectDB = async () => {
-  try {
-    await mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useFindAndModify: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-    });
-
-    console.log("MongoDB Connection Success 👍");
-  } catch (error) {
-    console.log("MongoDB Connection Failed 💥");
-    process.exit(1);
-  }
-};
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }).
+catch(error => handleError(error));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
