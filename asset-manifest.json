@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/connect-to-a-mechanic/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/connect-to-a-mechanic/static/js/main.a0d16e9f.chunk.js",
-    "main.js.map": "/connect-to-a-mechanic/static/js/main.a0d16e9f.chunk.js.map",
-    "runtime-main.js": "/connect-to-a-mechanic/static/js/runtime-main.688d845a.js",
-    "runtime-main.js.map": "/connect-to-a-mechanic/static/js/runtime-main.688d845a.js.map",
-    "static/js/2.88842615.chunk.js": "/connect-to-a-mechanic/static/js/2.88842615.chunk.js",
-    "static/js/2.88842615.chunk.js.map": "/connect-to-a-mechanic/static/js/2.88842615.chunk.js.map",
-    "static/js/3.558e2cf3.chunk.js": "/connect-to-a-mechanic/static/js/3.558e2cf3.chunk.js",
-    "static/js/3.558e2cf3.chunk.js.map": "/connect-to-a-mechanic/static/js/3.558e2cf3.chunk.js.map",
+    "main.js": "/connect-to-a-mechanic/static/js/main.932b5960.chunk.js",
+    "main.js.map": "/connect-to-a-mechanic/static/js/main.932b5960.chunk.js.map",
+    "runtime-main.js": "/connect-to-a-mechanic/static/js/runtime-main.1d7f6326.js",
+    "runtime-main.js.map": "/connect-to-a-mechanic/static/js/runtime-main.1d7f6326.js.map",
+    "static/js/2.a76f5084.chunk.js": "/connect-to-a-mechanic/static/js/2.a76f5084.chunk.js",
+    "static/js/2.a76f5084.chunk.js.map": "/connect-to-a-mechanic/static/js/2.a76f5084.chunk.js.map",
+    "static/js/3.acf1d471.chunk.js": "/connect-to-a-mechanic/static/js/3.acf1d471.chunk.js",
+    "static/js/3.acf1d471.chunk.js.map": "/connect-to-a-mechanic/static/js/3.acf1d471.chunk.js.map",
     "index.html": "/connect-to-a-mechanic/index.html",
     "static/css/main.8c8b27cf.chunk.css.map": "/connect-to-a-mechanic/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.88842615.chunk.js.LICENSE.txt": "/connect-to-a-mechanic/static/js/2.88842615.chunk.js.LICENSE.txt",
+    "static/js/2.a76f5084.chunk.js.LICENSE.txt": "/connect-to-a-mechanic/static/js/2.a76f5084.chunk.js.LICENSE.txt",
     "static/media/mechanicphoto.c327e6e6.jpg": "/connect-to-a-mechanic/static/media/mechanicphoto.c327e6e6.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.688d845a.js",
-    "static/js/2.88842615.chunk.js",
+    "static/js/runtime-main.1d7f6326.js",
+    "static/js/2.a76f5084.chunk.js",
     "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.a0d16e9f.chunk.js"
+    "static/js/main.932b5960.chunk.js"
   ]
 }
