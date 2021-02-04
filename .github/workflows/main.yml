@@ -19,7 +19,7 @@ jobs:
       env:
         HEROKU_BACKEND_APP_NAME: ${{secrets.HEROKU_BACKEND_APP_NAME}}
     - name: push
-      run: git push herokuback `git subtree split --prefix backend master`:master --force
+      run: git push herokuback `git subtree split --prefix back_end master`:master --force
   frontend-heroku:
     needs: backend-heroku
     runs-on: ubuntu-latest
@@ -35,4 +35,4 @@ jobs:
       env:
         HEROKU_FRONTEND_APP_NAME: ${{secrets.HEROKU_FRONTEND_APP_NAME}}
     - name: push
-      run: git push herokufront `git subtree split --prefix frontend master`:master --force
+      run: git push herokufront `git subtree split --prefix front_end master`:master --force
