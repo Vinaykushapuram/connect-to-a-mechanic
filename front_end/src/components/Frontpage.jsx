@@ -10,7 +10,7 @@ import Mechimage from './mechanicphoto.jpg';
 import { Height } from "@material-ui/icons";
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
    
   },
  
