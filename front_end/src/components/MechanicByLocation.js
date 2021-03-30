@@ -16,7 +16,7 @@ class MechanicByLocation extends React.Component
     async componentDidMount()
     {    
         
-        const url='http://localhost:3000/bylocation'+window.location.pathname;
+        const url=`${process.env.REACT_APP_BACKEND_HOST}/bylocation${window.location.pathname}`;
         console.log(url);
         
         var items=await fetch(url);

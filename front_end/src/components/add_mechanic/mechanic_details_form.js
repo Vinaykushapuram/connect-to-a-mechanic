@@ -36,7 +36,7 @@ handleInputChange= (event) =>{
 handleSubmit= (event) =>{
 
     event.preventDefault();
-    axios.post('http://localhost:3000/mechanics',{
+    axios.post(`${process.env.REACT_APP_BACKEND_HOST}/mechanics`,{
         name:this.state.firstName+' '+this.state.lastName,
         shopname:this.state.shopname,
         phoneno1:this.state.phonenumber1,

@@ -16,7 +16,7 @@ class Foo extends React.Component{
     
   async  componentDidMount()
   {
-      const url='http://localhost:3000/mechanics';
+      const url=`${process.env.REACT_APP_BACKEND_HOST}/mechanics`;
       const items=await fetch(url);
       const data =await items.json();
       
