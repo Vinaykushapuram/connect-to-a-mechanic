@@ -1,7 +1,8 @@
 
 import React from 'react';
 import Card from './Cards'
-
+import dotenv from 'dotenv';
+dotenv.config();
 
 class Foo extends React.Component{ 
 

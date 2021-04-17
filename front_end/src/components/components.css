@@ -1,0 +1,23 @@
+.btn_wrapper
+{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:space-between;
+}
+.location
+{
+    padding-left: 40px;
+}
+.btn_wrapper{
+    padding-right: 100px;
+}
+.header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+
+}

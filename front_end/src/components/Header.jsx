@@ -6,7 +6,7 @@ import Mechimage from './mechanicphoto.jpg';
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
-      padding :"20px",
+  
     },
     menuButton: {
       marginRight: theme.spacing(2)

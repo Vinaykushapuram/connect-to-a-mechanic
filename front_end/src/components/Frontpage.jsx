@@ -4,19 +4,27 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Buttons from "./Buttons.jsx";
 import Location from "./Locationsearch.jsx";
-
+import './components.css'
 import Fetchdata from './fetch_mechanic';
 import Mechimage from './mechanicphoto.jpg';
 import { Height } from "@material-ui/icons";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1
+
    
   },
- 
+ appbar:
+ {
+
+  height:100,
+ },
   
   title: {
-    flexGrow: 1
+    flexGrow: 1,
+    padding:20,
+    fontsize:30
+    
   }
   ,
   layout: {
@@ -40,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(3),
     }
 }
+
 }));
 
 export default function Frontpage() {
@@ -49,14 +58,14 @@ export default function Frontpage() {
     
  <main className={classes.layout}>
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appbar} >
         <Typography
           className={classes.title}
           style={{ textAlign: "center" }}
           variant="h2"
           Wrap
         >
-        <img src={Mechimage} style={{width:'50px',height:'100%'}} />
+        <img src={Mechimage} style={{width:'50px',height:'50%'}} />
           CONNECT TO A MECHANIC
          
         </Typography>
@@ -64,10 +73,17 @@ export default function Frontpage() {
       </AppBar>
      
       <paper className={classes.paper}>
-      <Location  />
-      <Buttons />
-      <Fetchdata />
-      </paper>
+      <div className='btn_wrapper'>
+          <div className='location'>
+            <Location  />
+         </div>
+        <div className='btn'>
+    
+          <Buttons />
+         </div>
+      </div>
+        <Fetchdata />
+         </paper>
      
     </div>
     </main>

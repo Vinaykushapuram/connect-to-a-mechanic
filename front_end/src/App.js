@@ -1,11 +1,11 @@
-import dotenv from 'dotenv';
-import './App.css'
+import './App.css';
 import Frontpage from './components/Frontpage';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import Addmechanic from './components/add_mechanic/layout_form.js'
 import MechanicByLocation from './components/MechanicByLocation';
 import Footer from './components/Footer';
 import Header from'./components/Header';
+import dotenv from 'dotenv';
 dotenv.config();
 function App() {
   return (
