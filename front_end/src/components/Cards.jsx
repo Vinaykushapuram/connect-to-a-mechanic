@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import DriveEtaIcon from '@material-ui/icons/DriveEta';
 import { blue } from '@material-ui/core/colors';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 const useStyles = makeStyles((theme)=>({
   root: {
@@ -19,7 +20,7 @@ const useStyles = makeStyles((theme)=>({
     transform: 'scale(0.8)',
   },
   title: {
-    fontSize: 14,
+   
   },
   pos: {
     marginBottom: 12,
@@ -49,11 +50,9 @@ return (
     
     <paper className={classes.paper} >
     <Card className={classes.root} >
-      <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          
-        </Typography>
-        <Typography variant="h5" component="h2" style={{color:'blue'}}>
+      <CardContent className='cardcontent'>
+
+        <Typography variant="h5" component="h2" style={{color:'blue',fontstyle:'italic'}}>
         {props.element.name}
         </Typography>
         <Typography variant="h5" component="h2" style={{color:'green'}}>

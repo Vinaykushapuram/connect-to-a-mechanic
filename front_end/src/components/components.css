@@ -19,5 +19,25 @@
     justify-content: center;
     align-items: center;
     color: blue;
+}
+.cardcontent
+{
+   display:flex;
+   flex-direction: column;
+   padding-left: 20px;
 
+
+}
+.Empty
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    font-size: 80px;
+    font-family: 'Courier New', Courier, monospace;
+     color:rgb(231, 180, 112);
 }

@@ -61,11 +61,11 @@ export default function Frontpage() {
       <AppBar position="static" className={classes.appbar} >
         <Typography
           className={classes.title}
-          style={{ textAlign: "center" }}
-          variant="h2"
+          style={{ textAlign: "center" ,fontSize:"45px" }}
+         
           Wrap
         >
-        <img src={Mechimage} style={{width:'50px',height:'50%'}} />
+        <img src={Mechimage} style={{height:'55px',width:'100px'}} />
           CONNECT TO A MECHANIC
          
         </Typography>

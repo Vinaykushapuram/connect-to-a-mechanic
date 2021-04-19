@@ -2,7 +2,21 @@ import React from 'react';
 import Card from './Cards';
 import Header from './Header';
 import dotenv from 'dotenv';
+import { ContactSupportOutlined } from '@material-ui/icons';
+import './components.css'
 dotenv.config();
+function  Emptypage() {
+    return (
+        <div className='Empty'>
+          <div>
+             OOPS !! can not find mechanics for this  location.
+          </div>
+        </div>
+
+    )
+    
+}
+
 class MechanicByLocation extends React.Component
 {
     constructor(props)
@@ -16,8 +30,8 @@ class MechanicByLocation extends React.Component
 
     async componentDidMount()
     {      
-        var location=(window.location.pathname.split('/'))[2];
-             
+        var location=this.props.match.params.location;
+            
         const url=`${process.env.REACT_APP_BACKEND_HOST}/bylocation/${location}`;
         console.log(url);
         
@@ -34,13 +48,17 @@ class MechanicByLocation extends React.Component
         return (
             <div>
             <Header />
-            {this.state.mechanics.map((mechanic)=>
+            { 
+               this.state.mechanics.length!=0 ?( this.state.mechanics.map((mechanic)=>
                { return(
+                   
                     <div>
                     <Card element={mechanic}/>
                     </div>
+                   
                )
-                })}
+                })):<Emptypage />
+            }
             </div>
         )
     }

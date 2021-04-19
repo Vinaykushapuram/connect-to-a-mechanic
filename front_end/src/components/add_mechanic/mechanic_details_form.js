@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 
 import Button from '@material-ui/core/Button';
+import { Link, Redirect } from 'react-router-dom';
 
 const axios = require('axios').default;
 class AddressForm extends React.Component {
@@ -36,6 +37,7 @@ handleInputChange= (event) =>{
 handleSubmit= (event) =>{
 
     event.preventDefault();
+    
     axios.post(`${process.env.REACT_APP_BACKEND_HOST}/mechanics`,{
         name:this.state.firstName+' '+this.state.lastName,
         shopname:this.state.shopname,
@@ -56,6 +58,10 @@ handleSubmit= (event) =>{
     .catch(function(error){
         console.log(error);
     });
+    
+
+   alert('successfully added the Mechanic');
+ 
     this.setState({
       firstName:'',
       lastName:'',
@@ -71,11 +77,15 @@ handleSubmit= (event) =>{
       vehicle:'',
 
     });
+     // this.props.history.push('/');
+ 
+    window.location.pathname='/';
+     
 }
   render()
   {return (
     <React.Fragment>
-      
+ 
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
         <TextField
@@ -240,9 +250,11 @@ handleSubmit= (event) =>{
 
        
       </Grid>
-      <Button variant="outlined" color="primary" align="center"  onClick={this.handleSubmit}>
+ 
+      <Button variant="outlined" color="primary" align="center" style={{margin:'10px'}} onClick={this.handleSubmit}>
       submit
      </Button>
+     
     </React.Fragment>
   );
   }
