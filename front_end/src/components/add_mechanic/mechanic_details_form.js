@@ -79,7 +79,7 @@ handleSubmit= (event) =>{
     });
      // this.props.history.push('/');
  
-    window.location.pathname='/';
+    window.location.pathname='/connect-to-a-mechanic`';
      
 }
   render()

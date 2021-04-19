@@ -1,9 +1,18 @@
 
 import React from 'react';
 import Card from './Cards'
+import './components.css'
 import dotenv from 'dotenv';
 dotenv.config();
+function  Emptypage() {
+    return (
+        <div className='Empty'>
+          <div>
+            Loading ...
+          </div>
+        </div>
 
+    )}
 class Foo extends React.Component{ 
 
     constructor(props)
@@ -31,12 +40,12 @@ class Foo extends React.Component{
    {
        return(
            <div>
-              {this.state.mechanics.map((element) =>
+              {this.state.mechanics.length!=0 ?this.state.mechanics.map((element) =>
                 {  return (
                     <div>
                     <Card element={element} />
                     </div>)
-                })}
+                }):<Emptypage/>}
            </div>
        );
    }
