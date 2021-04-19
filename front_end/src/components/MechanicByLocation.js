@@ -2,9 +2,17 @@ import React from 'react';
 import Card from './Cards';
 import Header from './Header';
 import dotenv from 'dotenv';
+import Footer from './Footer';
 import { ContactSupportOutlined } from '@material-ui/icons';
 import './components.css'
 dotenv.config();
+function  Loading() {
+    return (
+        <div  className='Loading'>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="loading"/>
+        </div>
+
+    )}
 function  Emptypage() {
     return (
         <div className='Empty'>
@@ -25,6 +33,7 @@ class MechanicByLocation extends React.Component
     this.state=
     {
         mechanics:[],
+        IsLoading:true,
     }
     }
 
@@ -38,7 +47,7 @@ class MechanicByLocation extends React.Component
         var items=await fetch(url);
         var data=await items.json();
         console.log(data);
-        this.setState({mechanics:data});
+        this.setState({mechanics:data,IsLoading:false});
 
 
     }
@@ -48,7 +57,7 @@ class MechanicByLocation extends React.Component
         return (
             <div>
             <Header />
-            { 
+            { this.state.IsLoading?<Loading />:
                this.state.mechanics.length!=0 ?( this.state.mechanics.map((mechanic)=>
                { return(
                    
@@ -57,8 +66,12 @@ class MechanicByLocation extends React.Component
                     </div>
                    
                )
-                })):<Emptypage />
+                })):<div>
+                <Emptypage />
+             
+                </div>
             }
+            
             </div>
         )
     }

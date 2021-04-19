@@ -18,7 +18,9 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: theme.spacing(2)
     },
     title: {
-      flexGrow: 1
+      flexGrow: 1,
+      padding:20,
+      fontsize:30
     }
     ,
     layout: {
@@ -53,11 +55,11 @@ const useStyles = makeStyles((theme) => ({
             <AppBar position="static">
               <Typography
                 className={classes.title}
-                style={{ textAlign: "center" }}
-                variant="h2"
+                style={{ textAlign: "center" ,fontSize:"45px" }}
+               
                 Wrap
               >
-              <img src={Mechimage} style={{width:'50px',height:'100%'}} />
+              <img src={Mechimage} style={{height:'55px',width:'100px'}} />
                 CONNECT TO A MECHANIC
                
               </Typography>

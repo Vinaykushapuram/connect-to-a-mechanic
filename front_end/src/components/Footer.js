@@ -17,8 +17,10 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
   },
   footer: {
+    
     padding: theme.spacing(3, 2),
-    marginTop: 'auto',
+    marginTop: '-50px',
+    marginBottom:'0px',
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
   }
@@ -31,7 +33,7 @@ export default function StickyFooter() {
     <div >
       
       
-      <footer className={classes.footer}>
+      <footer className={classes.footer} style={{position:'relative'}}>
         <Container maxWidth="sm">
           <Typography variant="h5">we help in making your journey smooth.</Typography>
           

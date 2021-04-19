@@ -41,3 +41,10 @@
     font-family: 'Courier New', Courier, monospace;
      color:rgb(231, 180, 112);
 }
+.Loading
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}

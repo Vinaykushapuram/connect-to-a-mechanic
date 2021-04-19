@@ -2,14 +2,13 @@
 import React from 'react';
 import Card from './Cards'
 import './components.css'
+import Footer from './Footer';
 import dotenv from 'dotenv';
 dotenv.config();
-function  Emptypage() {
+function  Loading() {
     return (
-        <div className='Empty'>
-          <div>
-            Loading ...
-          </div>
+        <div  className='Loading'>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="loading"/>
         </div>
 
     )}
@@ -21,6 +20,7 @@ class Foo extends React.Component{
         this.state=
         {
             mechanics:[],
+            IsLoading:true
         }
     }
     
@@ -32,7 +32,8 @@ class Foo extends React.Component{
       
       this.setState(
           {
-              mechanics:data
+              mechanics:data,
+             IsLoading:false,
           }
       );
   }
@@ -40,12 +41,18 @@ class Foo extends React.Component{
    {
        return(
            <div>
-              {this.state.mechanics.length!=0 ?this.state.mechanics.map((element) =>
+              {this.state.IsLoading===false ?<div>{this.state.mechanics.map((element) =>
                 {  return (
                     <div>
                     <Card element={element} />
                     </div>)
-                }):<Emptypage/>}
+                })}
+               
+                </div>:
+                <Loading />
+               
+             }
+               
            </div>
        );
    }

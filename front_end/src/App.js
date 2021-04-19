@@ -18,7 +18,7 @@ function App() {
    <Route path='/:location'   component={MechanicByLocation}/>
    <Route path='/'   component={Frontpage}/>
    </Switch>
-  <Footer />
+     <Footer />
    </Router>
    
     );
