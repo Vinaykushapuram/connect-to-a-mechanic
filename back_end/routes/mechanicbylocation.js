@@ -1,27 +1,25 @@
 const  express=require('express');
-const   bodyparser=require('body-parser');
-const  Mechanics=require('../models/mechanicschema.js');
-
 const mechanicbylocation=express.Router();
 
-mechanicbylocation.use(bodyparser.json());
+const database=require('../models/database');
+let DB;
+
+const mechanic=DBConnect=>{
+    DB=database(DBConnect);
+    return mechanicbyrouter;
+}
 
 mechanicbylocation.route('/bylocation/:location')
 
-.get((req,res,next) =>
-{  
- var query=req.params;
-    Mechanics.find(query)
-    .then(mechanics1=>
-        {
-            
-            res.statusCode=200;
-            res.setHeader('Content-Type','application/json');
-            res.json(mechanics1)
-        },(err)=>next(err))
-        .catch((err)=>next(err))
+.get((req,res,next) =>{  
+    var {location}=req.params;
+    DB.listMechanicByLocation(location)
+        .then(result=>{
+            res.status(200).send(result);
+        })
+        .catch(err=>{
+            res.status(500).send();
+        })
+});
 
-})
-;
-
-module.exports=mechanicbylocation;
+module.exports=mechanic;

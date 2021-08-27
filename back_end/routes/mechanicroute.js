@@ -1,40 +1,34 @@
 const  express=require('express');
-const   bodyparser=require('body-parser');
-const  Mechanics=require('../models/mechanicschema.js');
-
 const mechanicrouter=express.Router();
 
-mechanicrouter.use(bodyparser.json());
+const database=require('../models/database');
+let DB;
+
+const mechanic=DBConnect=>{
+    DB=database(DBConnect);
+    return mechanicrouter;
+}
 
 mechanicrouter.route('/')
 
-.get((req,res,next) =>
-{  
-   
-    Mechanics.find({},null,{limit:5})
-    .then(mechanics1=>
-        {
-            res.statusCode=200;
-            res.setHeader('Content-Type','application/json');
-            res.json(mechanics1)
-        },(err)=>next(err))
-        .catch((err)=>next(err))
-
+.get((req,res,next) =>{  
+    DB.listAllMechanics()
+        .then(result=>{
+            res.status(200).send(result);
+        })
+        .catch(err=>{
+            res.status(500).send();
+        })
 })
-.post((req,res,next)=>
-{
-    Mechanics.create(req.body)
-    .then((mechanic)=>
-    {
-        console.log('profile created',mechanic);
-        res.statuscode=200;
-        res.setHeader('Content-type','application/json');
-        res.json(mechanic);
-    }
-,(err)=>next(err))
-.catch((err)=>next(err))
-});
+.post((req,res,next)=>{
+    DB. addMechanic(req.body)
+        .then(result=>{
+            res.status(200).send(result);
+        })
+        .catch(err=>{
+            res.status(500).send();
+        })
+})
 
-
-module.exports=mechanicrouter;
+module.exports=mechanic;
 

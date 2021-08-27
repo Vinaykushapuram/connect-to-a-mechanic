@@ -5,7 +5,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mongoose=require('mongoose');
 
 var cors=require('cors');
 
@@ -13,7 +12,16 @@ var mechanicrouter = require('./routes/mechanicroute.js');
 
 var mechanicbylocation=require('./routes/mechanicbylocation.js');
 
-
+// connect to sql
+const mysql = require('mysql');
+const DBConnect= mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
+});
+DBConnect.connect();
+// sql conn done
 var app = express();
 //handling cors
 app.use(cors());
@@ -34,8 +42,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-app.use('/',mechanicbylocation);
-app.use('/mechanics',mechanicrouter );
+app.use('/',mechanicbylocation(DBConnect));
+app.use('/mechanics',mechanicrouter(DBConnect) );
 
 
 // catch 404 and forward to error handler
